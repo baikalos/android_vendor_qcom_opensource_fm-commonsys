@@ -139,7 +139,7 @@ public class FMRadioService extends Service
    private IFMRadioServiceCallbacks mCallbacks;
    private static FmSharedPreferences mPrefs;
    private boolean mHeadsetPlugged = false;
-   private boolean mInternalAntennaAvailable = false;
+   private boolean mInternalAntennaAvailable = true;
    private WakeLock mWakeLock;
    private int mServiceStartId = -1;
    private boolean mServiceInUse = false;
@@ -2050,10 +2050,10 @@ public class FMRadioService extends Service
     */
    public void readInternalAntennaAvailable()
    {
-      mInternalAntennaAvailable  = false;
+      //mInternalAntennaAvailable  = false;
       if (mReceiver != null)
       {
-         mInternalAntennaAvailable = mReceiver.getInternalAntenna();
+         //mInternalAntennaAvailable = mReceiver.getInternalAntenna();
          Log.d(LOGTAG, "getInternalAntenna: " + mInternalAntennaAvailable);
       }
    }
